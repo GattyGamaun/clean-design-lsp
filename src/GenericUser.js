@@ -6,9 +6,13 @@ module.exports = class GenericUser extends User {
         this.protectedRights = protectedRights;
     }
 
-    setupAccessRight(right, value) {
-        if (!this.protectedRights.has(right)) {
-           this.accessRights.set(right, value);
+    setupAccessRight(right, isSetted) {
+        if (this.hasNoProtectedRights(right)) {
+           this.accessRights.set(right, isSetted);
         }
+    }
+
+    hasNoProtectedRights(right) {
+        return !this.protectedRights.has(right);
     }
 }

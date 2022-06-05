@@ -1,13 +1,13 @@
 module.exports = class User {
     constructor() {
-        this.accessRights = new Map();
+        this.accessRightToStatus = new Map();
     }
 
-    setupAccessRight(right, value) {
-        this.accessRights.set(right, value);
+    setupAccessRight(right, isSetted) {
+        this.accessRightToStatus.set(right, isSetted);
     }
 
     getValueOfAccessRight(right) {
-        return this.accessRights.get(right) || false;
+        return this.accessRightToStatus.get(right) || false;
     }
 }
