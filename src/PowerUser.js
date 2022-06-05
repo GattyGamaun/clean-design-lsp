@@ -1,13 +1,8 @@
-module.exports = class PowerUser {
+const User = require('./User');
+
+module.exports = class PowerUser extends User {
     constructor() {
+        super();
         this.accessRights = new Map();
-    }
-
-    setupAccessRight(right, value) {
-        this.accessRights.set(right, value);
-    }
-
-    getValueOfAccessRight(right) {
-        return this.accessRights.get(right) || false;
     }
 }

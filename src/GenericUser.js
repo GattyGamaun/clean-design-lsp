@@ -1,6 +1,6 @@
-const PowerUser = require('./PowerUser');
+const User = require('./User');
 
-module.exports = class GenericUser extends PowerUser {
+module.exports = class GenericUser extends User {
     constructor(protectedRights = new Set()) {
         super();
         this.protectedRights = protectedRights;

@@ -1,5 +1,6 @@
 const assert = require('assert');
 const GenericUser = require('../src/GenericUser');
+const PowerUser = require('../src/PowerUser');
 const { WRITE_TO_DATABASE } = require('../src/DatabaseGateway');
 
 describe('GenericUser', () => {
@@ -13,7 +14,7 @@ describe('GenericUser', () => {
     it('should get value of access right when right is not protected', () => {
         const CHANGE_IN_DATABASE = 'change in database';
 
-        const genericUser = new GenericUser();
+        const genericUser = new PowerUser();
         genericUser.setupAccessRight(CHANGE_IN_DATABASE, true);
 
         assert.strictEqual(genericUser.getValueOfAccessRight(CHANGE_IN_DATABASE), true);
