@@ -8,7 +8,7 @@ module.exports = class GenericUser extends User {
 
     setupAccessRight(right, isSetted) {
         if (this.hasNoProtectedRights(right)) {
-           this.accessRights.set(right, isSetted);
+           this.accessRightToStatus.set(right, isSetted);
         }
     }
 
